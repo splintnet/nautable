@@ -1,0 +1,27 @@
+@import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a:hover, button:hover {
+    @apply cursor-pointer;
+  }
+}
+
+@layer utilities {
+  #cc--main {
+    z-index: 10 !important;
+  }
+
+
+  #fireworks {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000 !important;
+  }
+}

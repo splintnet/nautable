@@ -1,0 +1,22 @@
+version: "3.5"
+
+services:
+  nextjs:
+    image: docker.pkg.github.com/splintnet/nautable/nautable
+    env_file: ./.env
+    restart: unless-stopped
+    networks:
+      - nextjs
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nautable.rule=Host(`nautable.com`,`www.nautable.com`,`nautable.de`,`www.nautable.de`)"
+      - "traefik.http.routers.nautable.tls.certresolver=myhttpchallenge"
+      - "traefik.http.routers.nautable.entrypoints=websecure"
+      - "traefik.http.routers.nautable.tls=true"
+      - "traefik.http.services.nautable.loadbalancer.server.port=3000"
+
+networks:
+  nextjs:
+  traefik:
+    external: true
