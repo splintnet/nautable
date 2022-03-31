@@ -49,3 +49,10 @@ Please to the same for top destinations, reviews, sliders, search input (where t
 
 DateRangePicker should "almost" look like the one on zizoo. Please be patient on mobile. User Experience on mobile is
 important so the picker should feel pretty usable and intuitive like zizoo's one.
+
+## Important
+
+All that currently exist can be modified! If you dont like the "api" style change it!. Header, footer, other components
+that I already copied have to be "tidied up". SVGs excluded. Maybe some mistakes have to be corrected.
+
+`yarn build && yarn start` should work after all and no eslint errors should be detected anymore
