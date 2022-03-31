@@ -1,7 +1,10 @@
 import '../styles/globals.css'
+import "../styles/nprogress.css"
 import 'react-dates/lib/css/_datepicker.css';
 import 'react-dates/initialize';
 
+import Router from "next/router";
+import nProgress from "nprogress";
 import {AnimatePresence, domAnimation, LazyMotion, m} from "framer-motion"
 
 import Script from "next/script"
@@ -11,6 +14,10 @@ import {animations} from "../lib/animations"
 import {GlobalStateProvider} from "../lib/app-server-context";
 import Header from "../components/globals/header";
 import Footer from "../components/globals/footer";
+
+Router.events.on("routeChangeStart", nProgress.start);
+Router.events.on("routeChangeError", nProgress.done);
+Router.events.on("routeChangeComplete", nProgress.done);
 
 const DynamicComponentWithNoSSR = dynamic(() => import('../lib/consent'), {ssr: false})
 

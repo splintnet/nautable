@@ -38,11 +38,11 @@ module.exports = withPlugins([
     ],
 
     swcMinify: true,
-    compiler: {
+    compiler: process.env.NODE_ENV !== 'development' ? {
       removeConsole: {
         exclude: ['error'],
       },
-    },
+    } : {},
   },
 ]);
 
