@@ -1,24 +1,26 @@
-import {MailIcon, PhoneIcon, XIcon} from '@heroicons/react/outline'
-import React, {Fragment, useState} from "react";
-import {Dialog, Transition} from '@headlessui/react'
-import ReCAPTCHA from "react-google-recaptcha";
-import {useForm} from "react-hook-form";
-import dynamic from 'next/dynamic'
+import { MailIcon, PhoneIcon, XIcon } from '@heroicons/react/outline';
+import React, { Fragment, useState } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { useForm } from 'react-hook-form';
+import dynamic from 'next/dynamic';
 
-const ContactFireworks = dynamic(() => import('./contact.fireworks'), {ssr: false})
+const ContactFireworks = dynamic(() => import('./contact.fireworks'), { ssr: false });
 
 export default function ContactModal(props) {
-  let {open, setOpen} = props
-  const [success, setSuccess] = useState(false)
+  const { open, setOpen } = props;
+  const [success, setSuccess] = useState(false);
 
-  const {register, handleSubmit, reset, getValues, formState: {errors}} = useForm({
+  const {
+    register, handleSubmit, reset, getValues, formState: { errors },
+  } = useForm({
     defaultValues: {
       email: '',
       firstname: '',
       lastname: '',
       subject: '',
-      message: ''
-    }
+      message: '',
+    },
   });
 
   const recaptchaRef = React.useRef(null);
@@ -30,7 +32,7 @@ export default function ContactModal(props) {
   };
 
   const onError = (errors, e) => {
-    console.log(errors, e)
+    console.log(errors, e);
   };
 
   const onReCAPTCHAChange = async (captchaCode) => {
@@ -41,31 +43,31 @@ export default function ContactModal(props) {
     }
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({...getValues(), captcha: captchaCode}),
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify({ ...getValues(), captcha: captchaCode }),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
       if (response.ok) {
         // If the response is ok than show the success alert
         // show firework
-        setSuccess(true)
+        setSuccess(true);
 
         setTimeout(() => {
-          setSuccess(false)
-          reset()
-          setOpen(false)
-        }, 6000)
+          setSuccess(false);
+          reset();
+          setOpen(false);
+        }, 6000);
       } else {
         // Else throw an error with the message returned
         // from the API
         const error = await response.json();
-        throw new Error(error.message)
+        throw new Error(error.message);
       }
     } catch (error) {
-      alert(error?.message || "Something went wrong");
+      alert(error?.message || 'Something went wrong');
     } finally {
       // Reset the reCAPTCHA when the request has failed or succeeeded
       // so that it can be executed again if user submits another email.
@@ -73,13 +75,18 @@ export default function ContactModal(props) {
     }
   };
 
-  return (<>
-      {success && (<ContactFireworks/>)}
-      <Transition.Root show={open}
-as={Fragment}>
-        <Dialog as="div"
-className="fixed z-10 inset-0 overflow-y-auto"
-onClose={setOpen}>
+  return (
+    <>
+      {success && (<ContactFireworks />)}
+      <Transition.Root
+        show={open}
+        as={Fragment}
+      >
+        <Dialog
+          as="div"
+          className="fixed z-10 inset-0 overflow-y-auto"
+          onClose={setOpen}
+        >
           <div className="flex items-end justify-center min-h-screen text-center sm:block sm:p-0">
             <Transition.Child
               as={Fragment}
@@ -90,11 +97,13 @@ onClose={setOpen}>
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-75 transition-opacity"/>
+              <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-75 transition-opacity" />
             </Transition.Child>
 
-            <span className="hidden sm:inline-block sm:align-middle sm:h-screen"
-aria-hidden="true">
+            <span
+              className="hidden sm:inline-block sm:align-middle sm:h-screen"
+              aria-hidden="true"
+            >
               &#8203;
             </span>
             <Transition.Child
@@ -107,7 +116,8 @@ aria-hidden="true">
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <div
-                className="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-5xl sm:w-full">
+                className="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-5xl sm:w-full"
+              >
                 <div className="absolute top-0 right-0 pt-4 pr-4 z-20">
                   <button
                     type="button"
@@ -115,16 +125,20 @@ aria-hidden="true">
                     onClick={() => setOpen(false)}
                   >
                     <span className="sr-only">Schließen</span>
-                    <XIcon className="h-6 w-6"
-aria-hidden="true"/>
+                    <XIcon
+                      className="h-6 w-6"
+                      aria-hidden="true"
+                    />
                   </button>
                 </div>
                 <div>
                   <h2 className="sr-only">Kontaktiere uns</h2>
                   <div className="grid grid-cols-1 lg:grid-cols-3">
                     <div className="relative overflow-hidden py-10 px-6 bg-primary-800 sm:px-10 xl:p-12">
-                      <div className="absolute inset-0 pointer-events-none sm:hidden"
-aria-hidden="true">
+                      <div
+                        className="absolute inset-0 pointer-events-none sm:hidden"
+                        aria-hidden="true"
+                      >
                         <svg
                           className="absolute inset-0 w-full h-full"
                           width={343}
@@ -148,10 +162,12 @@ aria-hidden="true">
                               y2="814.66"
                               gradientUnits="userSpaceOnUse"
                             >
-                              <stop stopColor="#fff"/>
-                              <stop offset={1}
-stopColor="#fff"
-stopOpacity={0}/>
+                              <stop stopColor="#fff" />
+                              <stop
+                                offset={1}
+                                stopColor="#fff"
+                                stopOpacity={0}
+                              />
                             </linearGradient>
                           </defs>
                         </svg>
@@ -183,10 +199,12 @@ stopOpacity={0}/>
                               y2="735.66"
                               gradientUnits="userSpaceOnUse"
                             >
-                              <stop stopColor="#fff"/>
-                              <stop offset={1}
-stopColor="#fff"
-stopOpacity={0}/>
+                              <stop stopColor="#fff" />
+                              <stop
+                                offset={1}
+                                stopColor="#fff"
+                                stopOpacity={0}
+                              />
                             </linearGradient>
                           </defs>
                         </svg>
@@ -218,10 +236,12 @@ stopOpacity={0}/>
                               y2="1032.66"
                               gradientUnits="userSpaceOnUse"
                             >
-                              <stop stopColor="#fff"/>
-                              <stop offset={1}
-stopColor="#fff"
-stopOpacity={0}/>
+                              <stop stopColor="#fff" />
+                              <stop
+                                offset={1}
+                                stopColor="#fff"
+                                stopOpacity={0}
+                              />
                             </linearGradient>
                           </defs>
                         </svg>
@@ -236,26 +256,34 @@ stopOpacity={0}/>
                           <span className="sr-only">Phone number</span>
                         </dt>
                         <dd className="flex text-base text-indigo-50">
-                          <PhoneIcon className="flex-shrink-0 w-6 h-6 text-indigo-200"
-aria-hidden="true"/>
+                          <PhoneIcon
+                            className="flex-shrink-0 w-6 h-6 text-indigo-200"
+                            aria-hidden="true"
+                          />
                           <span className="ml-3">040 210 919 45-0</span>
                         </dd>
                         <dt>
                           <span className="sr-only">Email</span>
                         </dt>
                         <dd className="flex text-base text-indigo-50">
-                          <MailIcon className="flex-shrink-0 w-6 h-6 text-indigo-200"
-aria-hidden="true"/>
+                          <MailIcon
+                            className="flex-shrink-0 w-6 h-6 text-indigo-200"
+                            aria-hidden="true"
+                          />
                           <span className="ml-3">info@splintnet.de</span>
                         </dd>
                       </dl>
-                      <ul role="list"
-className="mt-8 flex space-x-12">
+                      <ul
+                        role="list"
+                        className="mt-8 flex space-x-12"
+                      >
                         <li>
-                          <a className="text-indigo-200 hover:text-indigo-100"
-target="_blank"
-                             href="https://www.facebook.com/splintnet"
-rel="noreferrer">
+                          <a
+                            className="text-indigo-200 hover:text-indigo-100"
+                            target="_blank"
+                            href="https://www.facebook.com/splintnet"
+                            rel="noreferrer"
+                          >
                             <span className="sr-only">Facebook</span>
                             <svg
                               width={24}
@@ -274,9 +302,11 @@ rel="noreferrer">
                           </a>
                         </li>
                         <li>
-                          <a className="text-indigo-200 hover:text-indigo-100"
-target="blank"
-                             href="https://github.com/splintnet">
+                          <a
+                            className="text-indigo-200 hover:text-indigo-100"
+                            target="blank"
+                            href="https://github.com/splintnet"
+                          >
                             <span className="sr-only">GitHub</span>
                             <svg
                               width={24}
@@ -295,10 +325,12 @@ target="blank"
                           </a>
                         </li>
                         <li>
-                          <a className="text-indigo-200 hover:text-indigo-100"
-target="_blank"
-                             href="https://twitter.com/splintnet"
-rel="noreferrer">
+                          <a
+                            className="text-indigo-200 hover:text-indigo-100"
+                            target="_blank"
+                            href="https://twitter.com/splintnet"
+                            rel="noreferrer"
+                          >
                             <span className="sr-only">Twitter</span>
                             <svg
                               width={24}
@@ -320,8 +352,10 @@ rel="noreferrer">
                     </div>
 
                     <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-                      <form onSubmit={handleSubmit(onSubmit, onError)}
-                            className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                      <form
+                        onSubmit={handleSubmit(onSubmit, onError)}
+                        className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+                      >
                         <div>
                           <ReCAPTCHA
                             ref={recaptchaRef}
@@ -329,8 +363,10 @@ rel="noreferrer">
                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                             onChange={onReCAPTCHAChange}
                           />
-                          <label htmlFor="firstname"
-className="block text-sm font-medium text-gray-900">
+                          <label
+                            htmlFor="firstname"
+                            className="block text-sm font-medium text-gray-900"
+                          >
                             Vorname
                           </label>
                           <div className="mt-1">
@@ -338,17 +374,19 @@ className="block text-sm font-medium text-gray-900">
                               type="text"
                               name="firstname"
                               id="firstname"
-                              {...register("firstname", {required: true})}
+                              {...register('firstname', { required: true })}
                               autoComplete="given-name"
                               className="py-3 px-4 block w-full shadow text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                           </div>
                           {errors.firstname && (
-                            <span className="text-xs text-red-600">Bitte geben Sie Ihren Vornamen an</span>)}
+                          <span className="text-xs text-red-600">Bitte geben Sie Ihren Vornamen an</span>)}
                         </div>
                         <div>
-                          <label htmlFor="lastname"
-className="block text-sm font-medium text-gray-900">
+                          <label
+                            htmlFor="lastname"
+                            className="block text-sm font-medium text-gray-900"
+                          >
                             Nachname
                           </label>
                           <div className="mt-1">
@@ -356,36 +394,40 @@ className="block text-sm font-medium text-gray-900">
                               type="text"
                               name="lastname"
                               id="lastname"
-                              {...register("lastname", {required: true})}
+                              {...register('lastname', { required: true })}
                               autoComplete="last-name"
                               className="py-3 px-4 block w-full shadow text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                           </div>
                           {errors.lastname && (
-                            <span className="text-xs text-red-600">Bitte geben Sie Ihren Nachnamen an</span>)}
+                          <span className="text-xs text-red-600">Bitte geben Sie Ihren Nachnamen an</span>)}
                         </div>
                         <div>
-                          <label htmlFor="email"
-className="block text-sm font-medium text-gray-900">
+                          <label
+                            htmlFor="email"
+                            className="block text-sm font-medium text-gray-900"
+                          >
                             E-Mail
                           </label>
                           <div className="mt-1">
                             <input
                               id="email"
                               name="email"
-                              {...register("email", {required: true})}
+                              {...register('email', { required: true })}
                               type="email"
                               autoComplete="email"
                               className="py-3 px-4 block w-full shadow text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                           </div>
                           {errors.lastname && (
-                            <span className="text-xs text-red-600">Bitte geben Sie Ihre E-Mail Adresse an</span>)}
+                          <span className="text-xs text-red-600">Bitte geben Sie Ihre E-Mail Adresse an</span>)}
                         </div>
                         <div>
                           <div className="flex justify-between">
-                            <label htmlFor="phone"
-className="block text-sm font-medium text-gray-900">
+                            <label
+                              htmlFor="phone"
+                              className="block text-sm font-medium text-gray-900"
+                            >
                               Mobil
                             </label>
                           </div>
@@ -394,18 +436,20 @@ className="block text-sm font-medium text-gray-900">
                               type="text"
                               name="phone"
                               id="phone"
-                              {...register("phone", {required: true})}
+                              {...register('phone', { required: true })}
                               autoComplete="tel"
                               className="py-3 px-4 block w-full shadow text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                               aria-describedby="phone-optional"
                             />
                           </div>
                           {errors.phone && (
-                            <span className="text-xs text-red-600">Bitte geben Sie Ihre Telefonnummer an</span>)}
+                          <span className="text-xs text-red-600">Bitte geben Sie Ihre Telefonnummer an</span>)}
                         </div>
                         <div className="sm:col-span-2">
-                          <label htmlFor="subject"
-className="block text-sm font-medium text-gray-900">
+                          <label
+                            htmlFor="subject"
+                            className="block text-sm font-medium text-gray-900"
+                          >
                             Betreff
                           </label>
                           <div className="mt-1">
@@ -413,22 +457,26 @@ className="block text-sm font-medium text-gray-900">
                               type="text"
                               name="subject"
 
-                              {...register("subject", {required: true})}
+                              {...register('subject', { required: true })}
                               id="subject"
                               className="py-3 px-4 block w-full shadow text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             />
                           </div>
                           {errors.subject && (
-                            <span className="text-xs text-red-600">Bitte geben Sie einen Betreff an</span>)}
+                          <span className="text-xs text-red-600">Bitte geben Sie einen Betreff an</span>)}
                         </div>
                         <div className="sm:col-span-2">
                           <div className="flex justify-between">
-                            <label htmlFor="message"
-className="block text-sm font-medium text-gray-900">
+                            <label
+                              htmlFor="message"
+                              className="block text-sm font-medium text-gray-900"
+                            >
                               Nachricht
                             </label>
-                            <span id="message-max"
-className="text-xs text-gray-500">
+                            <span
+                              id="message-max"
+                              className="text-xs text-gray-500"
+                            >
                               Max. 500 Zeichen
                             </span>
                           </div>
@@ -437,20 +485,20 @@ className="text-xs text-gray-500">
                               id="message"
                               name="message"
                               rows={4}
-                              {...register("message", {required: true})}
+                              {...register('message', { required: true })}
                               className="py-3 px-4 block w-full shadow text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
                               aria-describedby="message-max"
                             />
                           </div>
 
                           {errors.message && (
-                            <span className="text-xs text-red-600">Und eine Nachricht, damit wir uns bestmöglich auf ein Gespräch vorbereiten können</span>)}
+                          <span className="text-xs text-red-600">Und eine Nachricht, damit wir uns bestmöglich auf ein Gespräch vorbereiten können</span>)}
                         </div>
                         <div className="sm:col-span-2 sm:flex sm:justify-end">
 
                           <button
                             type="button"
-onClick={() => setOpen(false)}
+                            onClick={() => setOpen(false)}
 
                             className="mt-2 w-full inline-flex items-center justify-center border border-gray-300 px-6 py-3 rounded-md shadow text-base font-medium mr-2 bg-white shadow hover:bg-gray-100 sm:w-auto"
                           >
@@ -459,7 +507,7 @@ onClick={() => setOpen(false)}
                           <button
                             disabled={success}
                             type="submit"
-                            className={"mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 sm:w-auto " + (success ? 'bg-opacity-50' : '')}
+                            className={`mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 sm:w-auto ${success ? 'bg-opacity-50' : ''}`}
                           >
                             {success ? 'gesendet' : 'senden'}
                           </button>
@@ -474,6 +522,5 @@ onClick={() => setOpen(false)}
         </Dialog>
       </Transition.Root>
     </>
-  )
+  );
 }
-

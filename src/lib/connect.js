@@ -1,14 +1,14 @@
-import qs from "qs"
+import qs from 'qs';
 
 /**
  * Get full Strapi URL from path
  * @param {string} path Path of the URL
  * @returns {string} Full Strapi URL
  */
-export function getStrapiURL(path = "") {
+export function getStrapiURL(path = '') {
   return `${
-    process.env.NEXT_PUBLIC_CONNECT_API_URL || "https://demo.connect.demo.5-anker.com"
-  }${path}`
+    process.env.NEXT_PUBLIC_CONNECT_API_URL || 'https://demo.connect.demo.5-anker.com'
+  }${path}`;
 }
 
 /**
@@ -22,26 +22,26 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
   // Merge default and user options
   const mergedOptions = {
     headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${process.env.NEXT_PUBLIC_CONNECT_API_TOKEN}`
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONNECT_API_TOKEN}`,
     },
     ...options,
-  }
+  };
 
   // Build request URL
-  const queryString = qs.stringify(urlParamsObject)
+  const queryString = qs.stringify(urlParamsObject);
   const requestUrl = `${getStrapiURL(
-    `/dnet/com${path}${queryString ? `?${queryString}` : ""}`
-  )}`
+    `/dnet/com${path}${queryString ? `?${queryString}` : ''}`,
+  )}`;
 
   // Trigger API call
-  const response = await fetch(requestUrl, mergedOptions)
+  const response = await fetch(requestUrl, mergedOptions);
 
   // Handle response
   if (!response.ok) {
-    console.error(response.statusText)
-    throw new Error(`An error occured please try again`)
+    console.error(response.statusText);
+    throw new Error('An error occured please try again');
   }
-  const data = await response.json()
-  return data
+  const data = await response.json();
+  return data;
 }

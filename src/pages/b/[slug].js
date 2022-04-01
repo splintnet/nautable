@@ -1,24 +1,27 @@
-import SEO from "../../components/helper/seo";
-import {useRouter} from "next/router";
-import {fetchAPI} from "../../lib/connect";
+import { useRouter } from 'next/router';
+import SEO from '../../components/helper/seo';
+import { fetchAPI } from '../../lib/connect';
 
 export const getServerSideProps = async (context) => {
-  const {data} = await fetchAPI('/boat/' + context.params.slug.split('-')[0]);
+  const { data } = await fetchAPI(`/boat/${context.params.slug.split('-')[0]}`);
 
   return {
     props: {
-      boat: data
+      boat: data,
     },
   };
 };
 
-export default function Boat({boat}) {
+export default function Boat({ boat }) {
   const router = useRouter();
+  const { bookingQuery } = router.params;
 
   return (
     <div>
-      <SEO title={boat.title}/>
+      <SEO title={boat.title} />
       {boat.title}
+      {' '}
+      {bookingQuery}
     </div>
-  )
+  );
 }

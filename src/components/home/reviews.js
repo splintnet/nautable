@@ -1,6 +1,6 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
-export default function Reviews({reviews}) {
+export default function Reviews({ reviews }) {
   return (
     <section className="pt-4 pb-8 mb-28">
       <div className="container max-w-screen-xl mx-auto px-4 2xl:px-0 flex flex-col">
@@ -10,14 +10,17 @@ export default function Reviews({reviews}) {
         <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-3 top-20">
           {reviews.map((item, k) => (
             <div
-              key={k}
-              className={(k > 0 ? 'hidden' : '') + " mx-auto bg-gray-100 flex lg:flex flex-col items-center text-center px-8 pb-8 rounded-md space-y-4 max-w-md"}>
+              key={item.name + k}
+              className={`${k > 0 ? 'hidden' : ''} mx-auto bg-gray-100 flex lg:flex flex-col items-center text-center px-8 pb-8 rounded-md space-y-4 max-w-md`}
+            >
               <div className="-mt-12">
-                <Image alt={item.name}
-                       height={150}
-                       width={150}
-                       src="https://cdn.zizoo.com/media/images/testimonials/testimonial-1.jpg"
-                       className="rounded-full"/>
+                <Image
+                  alt={item.name}
+                  height={150}
+                  width={150}
+                  src="https://cdn.zizoo.com/media/images/testimonials/testimonial-1.jpg"
+                  className="rounded-full"
+                />
               </div>
               <blockquote className="flex flex-col space-y-4 text-sm italic">
                 <p>{item.subject}</p>
@@ -29,7 +32,7 @@ export default function Reviews({reviews}) {
                   width={30}
                   height={20}
                   src="https://cdn.zizoo.com/media/images/flags/square/au.svg"
-className="w-full h-auto"
+                  className="w-full h-auto"
                 />
               </div>
             </div>
@@ -37,5 +40,5 @@ className="w-full h-auto"
         </div>
       </div>
     </section>
-  )
+  );
 }

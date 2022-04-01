@@ -2,59 +2,61 @@ import React from 'react';
 import Head from 'next/head';
 
 export default function SEO({
-                              description = '',
-                              author = 'nautable',
-                              meta,
-                              title = 'nautable - yachting and much more',
-                            }) {
+  description = '',
+  author = 'nautable',
+  meta,
+  title = 'nautable - yachting and much more',
+}) {
   const metaData = [
     {
-      name: `description`,
+      name: 'description',
       content: description,
     },
     {
-      property: `og:title`,
+      property: 'og:title',
       content: title,
     },
     {
-      property: `og:description`,
+      property: 'og:description',
       content: description,
     },
     {
-      property: `og:type`,
-      content: `website`,
+      property: 'og:type',
+      content: 'website',
     },
     {
-      name: `twitter:card`,
-      content: `summary`,
+      name: 'twitter:card',
+      content: 'summary',
     },
     {
-      name: `twitter:creator`,
+      name: 'twitter:creator',
       content: author,
     },
     {
-      name: `twitter:title`,
+      name: 'twitter:title',
       content: title,
     },
     {
-      name: `twitter:description`,
+      name: 'twitter:description',
       content: description,
     },
   ].concat(meta);
   return (
     <Head>
       <title>{title}</title>
-      {metaData.map(({name, content}, i) => (
-        <meta key={i}
-name={name}
-content={content}/>
+      {metaData.map(({ name, content }, i) => (
+        <meta
+          key={i}
+          name={name}
+          content={content}
+        />
       ))}
     </Head>
   );
 }
 
 SEO.defaultProps = {
-  lang: `de`,
+  lang: 'de',
   meta: [],
-  description: ``,
+  description: '',
 };

@@ -1,15 +1,15 @@
-import {createContext, useReducer} from "react";
+import { createContext, useReducer } from 'react';
 
 const defaultGlobalState = {
-  open: false
+  open: false,
 };
 export const GlobalStateContext = createContext(defaultGlobalState);
 export const DispatchStateContext = createContext(undefined);
 
-export const GlobalStateProvider = ({children}) => {
+export function GlobalStateProvider({ children }) {
   const [state, dispatch] = useReducer(
-    (state, newValue) => ({...state, ...newValue}),
-    defaultGlobalState
+    (state, newValue) => ({ ...state, ...newValue }),
+    defaultGlobalState,
   );
   return (
     <GlobalStateContext.Provider value={state}>
@@ -18,4 +18,4 @@ export const GlobalStateProvider = ({children}) => {
       </DispatchStateContext.Provider>
     </GlobalStateContext.Provider>
   );
-};
+}

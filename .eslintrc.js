@@ -3,19 +3,34 @@ module.exports = {
   env: {
     es6: true,
     browser: true,
-    node: true
+    node: true,
+  },
+  parserOptions: {
+    ecmaVersion: 9,
+    ecmaFeatures: {
+      impliedStrict: true,
+      jsx: true,
+    },
   },
   extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "next",
-    "next/core-web-vitals"
+    'airbnb',
+    'next',
+    'next/core-web-vitals',
   ],
+
   rules: {
-    "react/jsx-max-props-per-line": [1, {"maximum": 1}],
-    "react/self-closing-comp": ["error", {
-      "component": true,
-      "html": true
-    }]
-  }
-}
+    'no-console': 'off',
+    'max-len': 'off',
+    'no-shadow': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
+    'jsx-a11y/no-redundant-roles': 'off',
+    'react/jsx-props-no-multi-spaces': 'off',
+    'react/no-danger': 'off',
+    'react/button-has-type': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+    'react/no-array-index-key': 'off',
+  },
+};

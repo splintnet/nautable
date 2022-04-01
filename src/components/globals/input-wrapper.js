@@ -1,4 +1,4 @@
-export default function InputWrapper({icon, children}) {
+export default function InputWrapper({ icon, children }) {
   return (
     <div className="relative w-full bg-white rounded shadow-sm">
       {icon}
@@ -6,5 +6,5 @@ export default function InputWrapper({icon, children}) {
         {children}
       </div>
     </div>
-  )
+  );
 }

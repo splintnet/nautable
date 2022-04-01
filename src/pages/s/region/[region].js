@@ -1,7 +1,7 @@
-import SEO from "../../../components/helper/seo";
+import SEO from '../../../components/helper/seo';
 
 export const getServerSideProps = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
   const data = await res.json();
   return {
     props: {
@@ -10,11 +10,11 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default function SearchCountryRegion({country}) {
+export default function SearchCountryRegion({ country }) {
   return (
     <div>
-      <SEO title="Search"/>
+      <SEO title="Search" />
       {country}
     </div>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 
 const API_KEY = process.env.MAILGUN_KEY;
 const DOMAIN = process.env.MAILGUN_DOMAIN;
@@ -7,20 +7,21 @@ const formData = require('form-data');
 const Mailgun = require('mailgun.js');
 
 const mailgun = new Mailgun(formData);
-const client = mailgun.client({username: 'api', key: API_KEY, url: 'https://api.eu.mailgun.net'});
-
+const client = mailgun.client({ username: 'api', key: API_KEY, url: 'https://api.eu.mailgun.net' });
 
 export default async function handler(req, res) {
-  const {body, method} = req;
+  const { body, method } = req;
 
   // Extract the email and captcha code from the request body
-  const {firstname, lastname, email, phone, subject, message, captcha} = body;
+  const {
+    firstname, lastname, email, phone, subject, message, captcha,
+  } = body;
 
-  if (method === "POST") {
+  if (method === 'POST') {
     // If email or captcha are missing return an error
     if (!firstname || !lastname || !email || !phone || !subject || !message || !captcha) {
       return res.status(422).json({
-        message: "Bitte füllen Sie alle erforderlichen Felder aus",
+        message: 'Bitte füllen Sie alle erforderlichen Felder aus',
       });
     }
 
@@ -30,10 +31,10 @@ export default async function handler(req, res) {
         `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captcha}`,
         {
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
           },
-          method: "POST",
-        }
+          method: 'POST',
+        },
       );
       const captchaValidation = await response.json();
       /**
@@ -52,7 +53,7 @@ export default async function handler(req, res) {
           from: 'Website <nextjs@splintnet.de>',
           to: 'info@splintnet.de',
           subject: 'Kontaktanfrage',
-          text: `Vorname: ${firstname}\nNachname: ${lastname}\nE-Mail: ${email}\nTelefon: ${phone}\nBetreff: ${subject}\nNachricht: ${message}`
+          text: `Vorname: ${firstname}\nNachname: ${lastname}\nE-Mail: ${email}\nTelefon: ${phone}\nBetreff: ${subject}\nNachricht: ${message}`,
         };
 
         client.messages.create(DOMAIN, messageData)
@@ -63,20 +64,19 @@ export default async function handler(req, res) {
             console.error(err);
           });
 
-
         // Return 200 if everything is successful
-        return res.status(200).send("Nachricht gesendet");
+        return res.status(200).send('Nachricht gesendet');
       }
 
       return res.status(422).json({
-        message: "Ungültiger Recaptcha Code",
+        message: 'Ungültiger Recaptcha Code',
       });
     } catch (error) {
       console.log(error);
-      return res.status(422).json({message: "Something went wrong"});
+      return res.status(422).json({ message: 'Something went wrong' });
     }
   }
   // Return 404 if someone pings the API with a method other than
   // POST
-  return res.status(404).send("Not found");
+  return res.status(404).send('Not found');
 }

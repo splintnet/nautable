@@ -1,4 +1,4 @@
-import qs from "qs"
+import qs from 'qs';
 
 const dev = process.env.NODE_ENV !== 'production';
 
@@ -15,23 +15,23 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
   // Merge default and user options
   const mergedOptions = {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     ...options,
-  }
+  };
 
   // Build request URL
-  const queryString = qs.stringify(urlParamsObject)
-  const requestUrl = `${server}/api${path}${queryString ? `?${queryString}` : ""}`
+  const queryString = qs.stringify(urlParamsObject);
+  const requestUrl = `${server}/api${path}${queryString ? `?${queryString}` : ''}`;
 
   // Trigger API call
-  const response = await fetch(requestUrl, mergedOptions)
+  const response = await fetch(requestUrl, mergedOptions);
 
   // Handle response
   if (!response.ok) {
-    console.error(response.statusText)
-    throw new Error(`An error occured please try again`)
+    console.error(response.statusText);
+    throw new Error('An error occured please try again');
   }
-  const data = await response.json()
-  return data
+  const data = await response.json();
+  return data;
 }
