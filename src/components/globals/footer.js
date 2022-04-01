@@ -11,46 +11,46 @@ export default function Footer() {
       <footer className="pt-10 bg-gray-100">
         <div className="container max-w-screen-xl mx-auto px-4 2xl:px-0">
           <div className="grid grid-flow-row grid-cols-1 gap-8 pb-8 md:gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <div className="flex-1"><h4 className="inline-block mb-2 text-sm font-semibold text-zz-blue-500">Zizoo</h4>
-              <ul className="flex flex-col space-y-2 text-sm text-zz-blue-500">
-                <li><a href="/en/about-zizoo/" className="flex flex-1 text-sm text-zz-blue-500">About Us</a></li>
-                <li><a href="/en/reassurance/" className="flex flex-1 text-sm text-zz-blue-500">Why Book with Us</a>
+            <div className="flex-1"><h4 className="inline-block mb-2 text-sm font-semibold text-blue-500">Zizoo</h4>
+              <ul className="flex flex-col space-y-2 text-sm text-blue-500">
+                <li><a href="/en/about-zizoo/" className="flex flex-1 text-sm text-blue-500">About Us</a></li>
+                <li><a href="/en/reassurance/" className="flex flex-1 text-sm text-blue-500">Why Book with Us</a>
                 </li>
-                <li><a href="/en/press/" className="flex flex-1 text-sm text-zz-blue-500">Press</a></li>
-                <li><a href="https://www.zizoo.com/en/m/" className="flex flex-1 text-sm text-zz-blue-500">Sailing
+                <li><a href="/en/press/" className="flex flex-1 text-sm text-blue-500">Press</a></li>
+                <li><a href="https://www.zizoo.com/en/m/" className="flex flex-1 text-sm text-blue-500">Sailing
                   Magazine</a></li>
-                <li><a href="/en/boat-charter/super-deals/" className="flex flex-1 text-sm text-zz-blue-500">Zizoo
+                <li><a href="/en/boat-charter/super-deals/" className="flex flex-1 text-sm text-blue-500">Zizoo
                   Deals</a>
                 </li>
                 <li><a href="https://join.com/companies/zizoo"
-                       className="flex flex-1 text-sm text-zz-blue-500">Careers</a>
+                       className="flex flex-1 text-sm text-blue-500">Careers</a>
                 </li>
                 <li><a href="/en/">EN</a> | <a href="/en-us/">EN-US</a> | <a href="/de/">DE</a> | <a
                   href="/nl/">NL</a> | <a href="/it/">IT</a> | <a href="/es/">ES</a> | <a href="/fr/">FR</a></li>
               </ul>
             </div>
             <div className="flex-1 lg:-ml-6"><h4
-              className="inline-block mb-2 text-sm font-semibold text-zz-blue-500">Factual and
+              className="inline-block mb-2 text-sm font-semibold text-blue-500">Factual and
               Legal pages</h4>
-              <ul className="flex flex-col space-y-2 text-sm text-zz-blue-500">
+              <ul className="flex flex-col space-y-2 text-sm text-blue-500">
                 <li><a href="https://help.zizoo.com/s/?language=en_US"
-                       className="flex flex-1 text-sm text-zz-blue-500">Support</a></li>
-                <li><a href="/en/cookies/" className="flex flex-1 text-sm text-zz-blue-500">Cookies</a></li>
-                <li><a href="/en/data-policy" className="flex flex-1 text-sm text-zz-blue-500">Data Protection
+                       className="flex flex-1 text-sm text-blue-500">Support</a></li>
+                <li><a href="/en/cookies/" className="flex flex-1 text-sm text-blue-500">Cookies</a></li>
+                <li><a href="/en/data-policy" className="flex flex-1 text-sm text-blue-500">Data Protection
                   Policy</a>
                 </li>
-                <li><a href="/en/terms/" className="flex flex-1 text-sm text-zz-blue-500">Terms of Service</a></li>
+                <li><a href="/en/terms/" className="flex flex-1 text-sm text-blue-500">Terms of Service</a></li>
               </ul>
             </div>
             <div className="flex-1 lg:-ml-6"><h4
-              className="inline-block mb-2 text-sm font-semibold text-zz-blue-500">Contact
+              className="inline-block mb-2 text-sm font-semibold text-blue-500">Contact
               Us</h4>
-              <ul className="flex flex-col space-y-2 text-sm text-zz-blue-500">
+              <ul className="flex flex-col space-y-2 text-sm text-blue-500">
                 <li><a href="https://help.zizoo.com/s/contactsupport?language=en_US"
-                       className="flex flex-1 text-sm text-zz-blue-500">Contact</a></li>
+                       className="flex flex-1 text-sm text-blue-500">Contact</a></li>
               </ul>
               <div className="flex flex-col mt-2 space-y-4">
-                <ul className="flex flex-col space-y-2 text-sm text-zz-blue-500">
+                <ul className="flex flex-col space-y-2 text-sm text-blue-500">
                   <li>Mon-Sun: 9-9pm CET</li>
                   <li><a href="tel:UK: +33 1 76 44 06 49" itemProp="telephone"
                          title="Give us a call during opening hours"
@@ -68,10 +68,10 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex flex-col space-y-4"><h4
-              className="inline-block text-sm font-semibold text-zz-blue-500">Social
+              className="inline-block text-sm font-semibold text-blue-500">Social
               Media</h4>
-              <ul className="flex flex-row space-x-4 text-sm text-zz-blue-500">
-                <li><a className="flex items-center p-1 border-2 rounded-full border-zz-blue-500"
+              <ul className="flex flex-row space-x-4 text-sm text-blue-500">
+                <li><a className="flex items-center p-1 border-2 rounded-full border-blue-500"
                        href="https://www.pinterest.com/zizooboats/" target="_blank" rel="noreferrer noopener"
                        aria-label="Pinterest">
                   <svg fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4">
@@ -80,7 +80,7 @@ export default function Footer() {
                       stroke="currentColor" strokeWidth=".9" strokeMiterlimit="10"></path>
                   </svg>
                 </a></li>
-                <li><a className="flex items-center p-1 border-2 rounded-full border-zz-blue-500"
+                <li><a className="flex items-center p-1 border-2 rounded-full border-blue-500"
                        href="https://www.instagram.com/zizoo_boats/" target="_blank" rel="noreferrer noopener"
                        aria-label="Instagram">
                   <svg fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4">
@@ -89,7 +89,7 @@ export default function Footer() {
                       stroke="currentColor" strokeWidth=".9" strokeMiterlimit="10"></path>
                   </svg>
                 </a></li>
-                <li><a className="flex items-center p-1 border-2 rounded-full border-zz-blue-500"
+                <li><a className="flex items-center p-1 border-2 rounded-full border-blue-500"
                        href="https://www.facebook.com/ZizooBoats" target="_blank" rel="noreferrer noopener"
                        aria-label="Facebook">
                   <svg viewBox="0 0 11 23" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4">
@@ -98,7 +98,7 @@ export default function Footer() {
                           fill="currentColor"></path>
                   </svg>
                 </a></li>
-                <li><a className="flex items-center p-1 border-2 rounded-full border-zz-blue-500"
+                <li><a className="flex items-center p-1 border-2 rounded-full border-blue-500"
                        href="https://www.youtube.com/zizooboats" target="_blank" rel="noreferrer noopener"
                        aria-label="YouTube">
                   <svg fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4">
@@ -107,7 +107,7 @@ export default function Footer() {
                       stroke="currentColor" strokeWidth=".9" strokeMiterlimit="10"></path>
                   </svg>
                 </a></li>
-                <li><a className="flex items-center p-1 border-2 rounded-full border-zz-blue-500"
+                <li><a className="flex items-center p-1 border-2 rounded-full border-blue-500"
                        href="https://twitter.com/ZizooBoats" target="_blank" rel="noreferrer noopener"
                        aria-label="Twitter">
                   <svg fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4">
@@ -117,7 +117,7 @@ export default function Footer() {
                   </svg>
                 </a></li>
               </ul>
-              <h4 className="inline-block text-sm font-semibold text-zz-blue-500">Secure payments handled by</h4>
+              <h4 className="inline-block text-sm font-semibold text-blue-500">Secure payments handled by</h4>
               <div className="flex flex-row space-x-4">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 51 34"
                      className="object-contain w-auto h-10">
@@ -178,7 +178,7 @@ export default function Footer() {
                   </g>
                 </svg>
               </div>
-              <h4 className="inline-block text-sm font-semibold text-zz-blue-500">Guaranteed safe checkout</h4>
+              <h4 className="inline-block text-sm font-semibold text-blue-500">Guaranteed safe checkout</h4>
               <div className="pt-px pl-px overflow-hidden">
                 trustlock
               </div>
@@ -196,11 +196,11 @@ export default function Footer() {
           <div className="flex items-center py-3 space-x-4 border-t border-gray-200"><a href="/">
             <svg id="logo" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 124 25"
                  data-testid="logo"
-                 className="text-zz-blue-500 h-6 lg:h-6"><title>Zizoo</title>
+                 className="text-blue-500 h-6 lg:h-6"><title>Zizoo</title>
               <path
                 d="M52 23.819v-3.405l9.14-14.463h-8.748V2.184h13.679v3.34L56.9 20.052h9.17v3.768H52zm16.545 0V2.183h4.179V23.82h-4.179zm6.453 0v-3.405l9.139-14.463h-8.75V2.184h13.68v3.34l-9.171 14.527h9.172v3.768H74.997zm29.342-2.19C102.837 23.15 101.002 24 98.567 24c-2.435 0-4.298-.852-5.802-2.37-2.166-2.187-2.106-4.89-2.106-8.628 0-3.74-.06-6.442 2.106-8.63C94.268 2.85 96.132 2 98.567 2c2.435 0 4.27.852 5.772 2.371 2.164 2.19 2.135 4.891 2.135 8.63 0 3.738.03 6.442-2.135 8.63v-.002zm-3.097-14.704c-.601-.698-1.534-1.156-2.676-1.156-1.142 0-2.104.457-2.707 1.155-.81.912-1.02 1.912-1.02 6.075s.21 5.165 1.02 6.076c.603.698 1.565 1.154 2.707 1.154s2.075-.456 2.677-1.153c.812-.912 1.053-1.913 1.053-6.076 0-4.164-.24-5.166-1.053-6.078l-.001.003zm20.624 14.705c-1.503 1.518-3.336 2.37-5.772 2.37-2.436 0-4.3-.852-5.804-2.37-2.165-2.187-2.107-4.89-2.107-8.628 0-3.74-.058-6.442 2.107-8.63C111.794 2.85 113.658 2 116.093 2c2.437 0 4.271.852 5.772 2.371 2.165 2.19 2.135 4.891 2.135 8.63 0 3.738.03 6.442-2.135 8.63h.002zm-3.098-14.705c-.6-.698-1.53-1.156-2.675-1.156-1.141 0-2.105.457-2.705 1.155-.813.912-1.023 1.912-1.023 6.075s.21 5.165 1.023 6.076c.6.698 1.562 1.154 2.703 1.154 1.145 0 2.076-.456 2.675-1.153.814-.912 1.055-1.913 1.055-6.076 0-4.164-.24-5.166-1.055-6.078h.002v.003zM27.49 14.89l8.574 8.584L34.542 25h-.001l-8.574-8.584L17.395 25l-1.525-1.526 8.574-8.584L11.096 1.526 12.618 0l13.35 13.365L39.316.002l1.522 1.523L27.49 14.89zM42.362 3.051l-9.64 9.65 9.64 9.653L52 12.702l-9.64-9.653h.001v.002zm-.722 15.177l-4.796-4.387h4.797v4.387h-.001zm0-6.441h-4.797l4.796-4.61v4.61zm1.64-4.61l4.602 4.61h-4.603v-4.61zm0 11.05v-4.386h4.602l-4.603 4.387zm-25.14-6.44h-.001l1.093 1.139-9.622 9.427L0 12.703 9.697 3.05l1.196 1.078v7.658h7.246zm-8.56 7.402v.002l5.596-5.35H8.757V7.225l-5.604 5.423 6.425 6.542z"></path>
             </svg>
-          </a><span className="text-xs text-zz-blue-500">© 2014—2022 Zizooboats GmbH All rights reserved</span></div>
+          </a><span className="text-xs text-blue-500">© 2014—2022 Zizooboats GmbH All rights reserved</span></div>
         </div>
       </footer>
     </>

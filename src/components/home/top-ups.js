@@ -4,10 +4,10 @@ export default function ShopifyTopUps() {
   return (
     <div className="pt-8 pb-4">
       <div
-        className="container max-w-screen-xl mx-auto px-4 2xl:px-0 grid grid-flow-row grid-cols-1 gap-6 text-zz-blue-500 md:grid-cols-3">
+        className="container max-w-screen-xl mx-auto px-4 2xl:px-0 grid grid-flow-row grid-cols-1 gap-6 text-blue-500 md:grid-cols-3">
         <NextLink href="/search">
           <a
-            className="flex flex-row items-center flex-1 w-full p-5 space-x-4 transition duration-300 ease-in-out border border-gray-200 rounded-md shadow-sm hover:shadow-md hover:border-zz-blue-500"
+            className="flex flex-row items-center flex-1 w-full p-5 space-x-4 transition duration-300 ease-in-out border border-gray-200 rounded-md shadow-sm hover:shadow-md hover:border-blue-500"
           ><span className="w-8 h-8"><svg fill="none" xmlns="http://www.w3.org/2000/svg"
                                           viewBox="0 0 24 33" className="w-8 h-8"><path
             d="M11.548 23.34a.707.707 0 01-.528-.196l-2.881-2.942-4.13-.049a.732.732 0 01-.504-.22.763.763 0 01-.216-.515v-3.972L.216 12.21A.712.712 0 010 11.694a.724.724 0 01.216-.515l3.025-3.138v-4.07a.763.763 0 01.216-.515.732.732 0 01.504-.22l4.13-.05L10.924.245A.766.766 0 0111.452 0a.995.995 0 01.552.196l2.93 2.942h4.08c.19.005.37.084.505.221a.763.763 0 01.216.515v4.119l3.073 3.138a.71.71 0 01.216.515.723.723 0 01-.216.514l-2.881 2.942.048 4.218c-.013.194-.08.381-.192.539a.571.571 0 01-.528.196l-4.226-.05-2.929 2.992a.537.537 0 01-.209.26.52.52 0 01-.319.083h-.024zm-7.395-4.168l4.034.05a.727.727 0 01.48.195l2.785 2.845 2.833-2.893a.716.716 0 01.528-.197l4.082.05-.048-4.07c.012-.195.079-.382.192-.54l2.785-2.844-2.977-3.04a.738.738 0 01-.193-.54v-4.02h-3.937a.996.996 0 01-.528-.196l-2.785-2.893-2.737 2.844c-.15.13-.333.215-.528.245l-3.937.049v3.825a.759.759 0 01-.193.49l-2.929 3.09 2.977 3.137a.709.709 0 01.192.49l-.096 3.923z"
@@ -25,7 +25,7 @@ export default function ShopifyTopUps() {
           </a>
         </NextLink>
         <a
-          className="flex flex-row items-center flex-1 w-full p-5 space-x-4 transition duration-300 ease-in-out border border-gray-200 rounded-md shadow-sm hover:shadow-md hover:border-zz-blue-500"
+          className="flex flex-row items-center flex-1 w-full p-5 space-x-4 transition duration-300 ease-in-out border border-gray-200 rounded-md shadow-sm hover:shadow-md hover:border-blue-500"
           href="/en/reassurance/"><span className="w-8 h-8"><svg fill="none" xmlns="http://www.w3.org/2000/svg"
                                                                  viewBox="0 0 30 30" className="w-8 h-8"><path
           d="M2.895 13.6c.33-5.953 5.052-9.171 8.17-10.37.553-.212 1.112.217 1.112.81v21.39c0 .611-.6 1.045-1.166.815A12.659 12.659 0 012.895 13.6z"
@@ -51,7 +51,7 @@ export default function ShopifyTopUps() {
           <div className="flex flex-col items-start space-y-1"><strong>Largest inventory</strong><span
             className="text-sm ">Insured &amp; verified boats with optional crew.</span></div>
         </a><a
-        className="flex flex-row items-center flex-1 w-full p-5 space-x-4 transition duration-300 ease-in-out border border-gray-200 rounded-md shadow-sm hover:shadow-md hover:border-zz-blue-500"
+        className="flex flex-row items-center flex-1 w-full p-5 space-x-4 transition duration-300 ease-in-out border border-gray-200 rounded-md shadow-sm hover:shadow-md hover:border-blue-500"
         href="/en/reassurance/"><span className="w-8 h-8"><svg fill="none" xmlns="http://www.w3.org/2000/svg"
                                                                viewBox="0 0 25 33" className="w-8 h-8"><path
         d="M7.394 23.378l1.15 2.874c0 .144.143.144.287.144l3.305-1.006M17.165 23.09l-1.868 3.306c0 .143-.144.143-.287.143l-2.874-1.293"

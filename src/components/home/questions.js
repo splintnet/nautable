@@ -132,14 +132,14 @@ export default function Questions() {
           className="text-xl font-semibold md:text-3xl">Got a question?</span><span className="text-sm md:text-3xl">Our holiday planners are here seven days a week.</span>
           <dl className="grid grid-flow-row grid-cols-2 gap-4 -ml-12 text-lg">
             <dt className="text-right">Phone:</dt>
-            <dd className="text-left"><a href="tel:+44 20 3318 3641" className="text-zz-blue-500">+44 20 3318 3641</a>
+            <dd className="text-left"><a href="tel:+44 20 3318 3641" className="text-blue-500">+44 20 3318 3641</a>
             </dd>
             <dt className="text-right">WhatsApp:</dt>
-            <dd className="text-left"><a href="tel:+49 15731910983" className="text-zz-blue-500">+49 15731910983</a>
+            <dd className="text-left"><a href="tel:+49 15731910983" className="text-blue-500">+49 15731910983</a>
             </dd>
           </dl>
           <a
-            className="border border-transparent rounded text-center appearance-none select-none bg-zz-blue-500 text-white hover:text-white hover:bg-zz-turquoise-500 active:bg-zz-turquoise-500 text-sm px-4 flex items-center px-10 text-lg font-semibold text-white rounded bg-zz-blue-500 h-11"
+            className="border border-transparent rounded text-center appearance-none select-none bg-blue-500 text-white hover:text-white hover:bg-indigo-500 active:bg-indigo-500 text-sm px-4 flex items-center px-10 text-lg font-semibold text-white rounded bg-blue-500 h-11"
             href="mailto:customers@zizooboats.com">Send an E-mail</a></div>
       </div>
     </div>

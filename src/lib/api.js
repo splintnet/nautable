@@ -1,5 +1,9 @@
 import qs from "qs"
 
+const dev = process.env.NODE_ENV !== 'production';
+
+export const server = dev ? 'http://localhost:3869' : 'https://your_deployment.server.com';
+
 /**
  * Helper to make GET requests to Strapi API endpoints
  * @param {string} path Path of the API route
@@ -18,7 +22,7 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
 
   // Build request URL
   const queryString = qs.stringify(urlParamsObject)
-  const requestUrl = `/api${path}${queryString ? `?${queryString}` : ""}`
+  const requestUrl = `${server}/api${path}${queryString ? `?${queryString}` : ""}`
 
   // Trigger API call
   const response = await fetch(requestUrl, mergedOptions)

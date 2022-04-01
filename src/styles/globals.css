@@ -8,6 +8,188 @@
   a:hover, button:hover {
     @apply cursor-pointer;
   }
+
+  .container {
+    width: 100%
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1536px
+    }
+  }
+
+  .aspect-w-4 {
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 4
+  }
+
+  .aspect-w-4 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+  }
+
+  .aspect-h-3 {
+    --tw-aspect-h: 3
+  }
+
+  *, :after, :before {
+    box-sizing: inherit
+  }
+
+  :focus {
+    outline: none !important;
+    --tw-ring-color: transparent !important
+  }
+
+  html {
+    box-sizing: border-box;
+    scroll-behavior: smooth
+  }
+
+  summary::-webkit-details-marker {
+    display: none
+  }
+
+  svg {
+    overflow: visible
+  }
+
+  a:hover {
+    --tw-text-opacity: 1;
+    color: rgb(5 174 192/var(--tw-text-opacity))
+  }
+
+  .overlay {
+    position: relative
+  }
+
+  @media (min-width: 1024px) {
+    .overlay:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: .75;
+      content: "";
+      background: linear-gradient(0deg, #000 3%, hsla(0, 0%, 51%, 0) 35%, transparent)
+    }
+  }
+
+  .overlay-2 {
+    position: relative
+  }
+
+  .overlay-2:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    content: "";
+    top: 30%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, .5) 50%, #010232);
+    transition: all .5s ease 0s
+  }
+
+  .overlay-2:focus:after, .overlay-2:hover:after {
+    top: 0
+  }
+
+  .has-link a {
+    --tw-text-opacity: 1;
+    color: rgb(5 174 192/var(--tw-text-opacity))
+  }
+
+  .has-link-tw a, .has-link a {
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline
+  }
+
+  .has-link-tw a {
+    font-weight: 500
+  }
+
+  .has-link-tw-blue a {
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline
+  }
+
+  .has-link-tw-blue a:hover {
+    --tw-text-opacity: 1;
+    color: rgb(37 99 235/var(--tw-text-opacity))
+  }
+
+  .grecaptcha-badge {
+    display: none !important
+  }
+
+  .recaptcha a, .trustpilot a {
+    --tw-text-opacity: 1;
+    color: rgb(1 75 103/var(--tw-text-opacity))
+  }
+
+  .fw7 {
+    font-weight: 700
+  }
+
+  @media (min-width: 768px) {
+    .md\:overflow-initial-important {
+      overflow: initial !important
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lg\:overflow-initial-important {
+      overflow: initial !important
+    }
+  }
+
+  .blue-logo #logo {
+    --tw-text-opacity: 1;
+    color: rgb(37 99 235/var(--tw-text-opacity))
+  }
+
+  .blue-logo #logo:hover {
+    --tw-text-opacity: 1;
+    color: rgb(29 78 216/var(--tw-text-opacity))
+  }
 }
 
 @layer utilities {
