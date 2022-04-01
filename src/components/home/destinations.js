@@ -1,38 +1,6 @@
-import {faCode, faMarker, faStore} from '@fortawesome/free-solid-svg-icons'
 import style from './services.module.css'
 
-const features = [
-  {
-    name: 'Shopify Design-Entwicklung',
-    items: [
-      'Umsetzung Ihrer Corporate Identity',
-      'Suchmaschinenoptimierung',
-      'Responsive Design',
-      'Drag & Drop Modul-Entwicklung (Sections)',
-      'Anpassung bereits vorhandener Themes'
-    ],
-    icon: faMarker
-  },
-  {
-    name: 'Shopify Schnittstellen',
-    items: [
-      'Integration von Lieferdienstanbietern wie DHL, UPS, DPD und Deutscher Post',
-      'Konfiguration von Shopify Payments und Alternativen wie Klarna, SOFORT, VISA, Mastercard, Apple Pay, Shop Pay und auch Paypal',
-      'Anbindung von Enterprise Resource Planning Systemen (ERP-Systeme) wie JTL-Wawi oder Xentral'
-    ],
-    icon: faCode
-  },
-  {
-    name: 'Shopify Apps',
-    items: [
-      'Entwicklung benutzerspezifischer Apps & fehlender Shopify Funktionen',
-      'Umsetzung Ihrer App-Pläne in die Realität'
-    ],
-    icon: faStore
-  },
-]
-
-export default function ShopifyServices() {
+export default function TopDestinations() {
   return (
     <section className="pt-4 pb-8">
       <div className="container max-w-screen-xl mx-auto px-4 2xl:px-0 flex flex-col space-y-4 text-white">
@@ -51,7 +19,7 @@ export default function ShopifyServices() {
                      data-nimg="fill"
                      className="object-cover w-full h-full"/></div>
               <div
-                className="absolute z-5 inset-x-6 transition-all duration-500 ease-in-out text-center lg:text-left bottom-6 group-hover:bottom-12 group-focus:bottom-12 lg:bottom-14 lg:group-hover:bottom-20 lg:group-focus:bottom-20">
+                className="absolute inset-x-6 z-20 transition-all duration-500 ease-in-out text-center lg:text-left bottom-6 group-hover:bottom-12 group-focus:bottom-12 lg:bottom-14 lg:group-hover:bottom-20 lg:group-focus:bottom-20">
                 <span className="text-lg lg:text-2xl">Yacht Charter Bahamas</span><br/><span
                 className="text-sm font-hairline">Starting from £233/day</span>
               </div>
@@ -70,7 +38,7 @@ export default function ShopifyServices() {
                 <noscript></noscript>
               </div>
               <div
-                className="absolute z-5 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
+                className="absolute z-20 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
                 <span className="text-lg">Yacht Charter Caribbean</span><br/><span className="text-sm font-hairline">Starting from £199/day</span>
               </div>
             </a></li>
@@ -87,7 +55,7 @@ export default function ShopifyServices() {
                 <noscript></noscript>
               </div>
               <div
-                className="absolute z-5 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
+                className="absolute z-20 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
                 <span className="text-lg">Yacht Charter Greece</span><br/><span className="text-sm font-hairline">Starting from £80/day</span>
               </div>
             </a></li>
@@ -104,7 +72,7 @@ export default function ShopifyServices() {
                 <noscript></noscript>
               </div>
               <div
-                className="absolute z-5 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
+                className="absolute z-20 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
                 <span className="text-lg">Yacht Charter Croatia</span><br/><span className="text-sm font-hairline">Starting from £42/day</span>
               </div>
             </a></li>
@@ -123,7 +91,7 @@ export default function ShopifyServices() {
                 <noscript></noscript>
               </div>
               <div
-                className="absolute z-5 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
+                className="absolute z-20 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
                 <span className="text-lg">Yacht Charter British Virgin Islands</span><br/><span
                 className="text-sm font-hairline">Starting from £199/day</span></div>
             </a></li>
@@ -140,7 +108,7 @@ export default function ShopifyServices() {
                 <noscript></noscript>
               </div>
               <div
-                className="absolute z-5 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
+                className="absolute z-20 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
                 <span className="text-lg">Boat Rental Spain</span><br/><span className="text-sm font-hairline">Starting from £93/day</span>
               </div>
             </a></li>
@@ -157,7 +125,7 @@ export default function ShopifyServices() {
                 <noscript></noscript>
               </div>
               <div
-                className="absolute z-5 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
+                className="absolute z-20 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
                 <span className="text-lg">Yacht Charter Turkey</span><br/><span className="text-sm font-hairline">Starting from £127/day</span>
               </div>
             </a></li>
@@ -174,7 +142,7 @@ export default function ShopifyServices() {
                 <noscript></noscript>
               </div>
               <div
-                className="absolute z-5 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
+                className="absolute z-20 inset-x-6 transition-all duration-500 ease-in-out text-center bottom-6 group-hover:bottom-12 group-focus:bottom-12">
                 <span className="text-lg">Yacht Charter Italy</span><br/><span className="text-sm font-hairline">Starting from £55/day</span>
               </div>
             </a></li>

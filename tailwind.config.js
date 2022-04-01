@@ -31,6 +31,12 @@ module.exports = {
           '800': '#1E2832',
           '900': '#090C0F'
         },
+      },
+      width: {
+        'slider-item-lg': '270px',
+      },
+      height: {
+        'slider-item-lg': '340px',
       }
     },
   },

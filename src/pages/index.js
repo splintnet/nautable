@@ -1,6 +1,6 @@
 import SEO from "../components/helper/seo";
 import ShopifyTopUps from "../components/home/top-ups";
-import ShopifyServices from "../components/home/services";
+import TopDestinations from "../components/home/destinations";
 import {DateRangePicker} from 'react-dates';
 import {useState} from "react";
 import Reviews from "../components/home/Reviews";
@@ -9,6 +9,7 @@ import Video from "../components/home/video";
 import {useForm} from "react-hook-form";
 
 import {fetchAPI} from "../lib/api";
+import Tops from "../components/home/tops";
 
 export const getServerSideProps = async (context) => {
   const data = await fetchAPI('/reviews');
@@ -118,7 +119,8 @@ export default function Zizoo({reviews}) {
         </div>
       </div>
       <ShopifyTopUps/>
-      <ShopifyServices/>
+      <TopDestinations/>
+      <Tops/>
       <Reviews reviews={reviews}/>
       <Video/>
     </div>
