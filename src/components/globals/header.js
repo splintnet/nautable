@@ -83,6 +83,7 @@ export default function Header() {
                             className="inline-flex items-center flex-shrink-0 block w-5 h-auto"
                           >
                             <img
+                              alt="Flag"
                               src="https://cdn.zizoo.com/media/images/flags/round/en.svg"
                               width="20"
                               height="20"

@@ -67,7 +67,7 @@ export default function ContactModal(props) {
         throw new Error(error.message);
       }
     } catch (error) {
-      alert(error?.message || 'Something went wrong');
+      console.error(error?.message || 'Something went wrong');
     } finally {
       // Reset the reCAPTCHA when the request has failed or succeeeded
       // so that it can be executed again if user submits another email.
@@ -380,7 +380,7 @@ export default function ContactModal(props) {
                             />
                           </div>
                           {errors.firstname && (
-                          <span className="text-xs text-red-600">Bitte geben Sie Ihren Vornamen an</span>)}
+                            <span className="text-xs text-red-600">Bitte geben Sie Ihren Vornamen an</span>)}
                         </div>
                         <div>
                           <label
@@ -400,7 +400,7 @@ export default function ContactModal(props) {
                             />
                           </div>
                           {errors.lastname && (
-                          <span className="text-xs text-red-600">Bitte geben Sie Ihren Nachnamen an</span>)}
+                            <span className="text-xs text-red-600">Bitte geben Sie Ihren Nachnamen an</span>)}
                         </div>
                         <div>
                           <label
@@ -420,7 +420,7 @@ export default function ContactModal(props) {
                             />
                           </div>
                           {errors.lastname && (
-                          <span className="text-xs text-red-600">Bitte geben Sie Ihre E-Mail Adresse an</span>)}
+                            <span className="text-xs text-red-600">Bitte geben Sie Ihre E-Mail Adresse an</span>)}
                         </div>
                         <div>
                           <div className="flex justify-between">
@@ -443,7 +443,7 @@ export default function ContactModal(props) {
                             />
                           </div>
                           {errors.phone && (
-                          <span className="text-xs text-red-600">Bitte geben Sie Ihre Telefonnummer an</span>)}
+                            <span className="text-xs text-red-600">Bitte geben Sie Ihre Telefonnummer an</span>)}
                         </div>
                         <div className="sm:col-span-2">
                           <label
@@ -463,7 +463,7 @@ export default function ContactModal(props) {
                             />
                           </div>
                           {errors.subject && (
-                          <span className="text-xs text-red-600">Bitte geben Sie einen Betreff an</span>)}
+                            <span className="text-xs text-red-600">Bitte geben Sie einen Betreff an</span>)}
                         </div>
                         <div className="sm:col-span-2">
                           <div className="flex justify-between">
@@ -492,7 +492,7 @@ export default function ContactModal(props) {
                           </div>
 
                           {errors.message && (
-                          <span className="text-xs text-red-600">Und eine Nachricht, damit wir uns bestmöglich auf ein Gespräch vorbereiten können</span>)}
+                            <span className="text-xs text-red-600">Und eine Nachricht, damit wir uns bestmöglich auf ein Gespräch vorbereiten können</span>)}
                         </div>
                         <div className="sm:col-span-2 sm:flex sm:justify-end">
 

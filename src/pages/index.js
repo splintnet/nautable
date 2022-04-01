@@ -32,7 +32,7 @@ export default function Zizoo({ reviews }) {
   const [focusedInput, setFocusedInput] = useState(null);
 
   const {
-    register, handleSubmit, watch, formState: { errors },
+    register, handleSubmit, watch,
   } = useForm();
   const onSubmit = (data) => console.log(data);
 

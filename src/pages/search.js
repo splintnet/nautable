@@ -174,7 +174,7 @@ export default function Search({ data }) {
             </li>
           </ul>
           <div className="flex flex-row space-x-2 text-sm text-zz-blue-500">
-            Boats' ranking may be impacted by our
+            Boats&apos; ranking may be impacted by our
             agreements
             with partners.
           </div>

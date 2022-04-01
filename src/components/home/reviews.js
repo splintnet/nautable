@@ -29,6 +29,7 @@ export default function Reviews({ reviews }) {
               </blockquote>
               <div className="inline-flex items-center w-8 h-6 mt-4">
                 <Image
+                  alt="Flag"
                   width={30}
                   height={20}
                   src="https://cdn.zizoo.com/media/images/flags/square/au.svg"
