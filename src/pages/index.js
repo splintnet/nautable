@@ -11,13 +11,14 @@ import {useForm} from "react-hook-form";
 import {fetchAPI} from "../lib/api";
 import Tops from "../components/home/tops";
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async () => {
   const data = await fetchAPI('/reviews');
 
   return {
     props: {
       reviews: data
     },
+    revalidate: 10, // In seconds
   };
 };
 
