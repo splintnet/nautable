@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 
-const withPwa = require('next-pwa')
+const withPwa = require('next-pwa');
 const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
-})
+});
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
@@ -13,7 +13,7 @@ const withMDX = require('@next/mdx')({
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",
   },
-})
+});
 
 module.exports = withPlugins([
   [withBundleAnalyzer],
@@ -24,7 +24,7 @@ module.exports = withPlugins([
   {
     reactStrictMode: true,
     i18n: {
-      locales: ['de'],
+      locales: ['de', 'en', 'fr', 'es'],
       defaultLocale: 'de',
     },
     pwa: {
@@ -44,10 +44,10 @@ module.exports = withPlugins([
     redirects: async () => [
       {
         source: '/:path*',
-        has: [{type: 'host', value: 'nautable.com'}],
+        has: [{ type: 'host', value: 'nautable.com' }],
         destination: 'https://www.nautable.com/:path*',
-        permanent: true
-      }
+        permanent: true,
+      },
     ],
 
     swcMinify: true,
@@ -58,4 +58,3 @@ module.exports = withPlugins([
     } : {},
   },
 ]);
-

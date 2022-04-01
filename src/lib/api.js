@@ -2,7 +2,7 @@ import qs from 'qs';
 
 const dev = process.env.NODE_ENV !== 'production';
 
-export const server = dev ? 'http://localhost:3869' : 'https://your_deployment.server.com';
+export const server = dev ? 'http://localhost:3869' : 'http://localhost:3000';
 
 /**
  * Helper to make GET requests to Strapi API endpoints

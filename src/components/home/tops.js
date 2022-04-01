@@ -13,14 +13,16 @@ export default function Tops() {
       const amount = ref.current.children.length;
 
       setSiteWidth(ref.current.clientWidth);
-      setMaxWidth(amount * ref.current.firstChild.clientWidth);
-      setItemWidth(ref.current.firstChild.clientWidth + 10);
+      setMaxWidth(amount * ref.current.firstChild.clientWidth + 12);
+      setItemWidth(ref.current.firstChild.clientWidth + 16);
     }
   }, [ref.current]);
 
   const next = () => {
     if (currentOffset < maxWidth - siteWidth) {
       setCurrentOffset(currentOffset + itemWidth);
+    } else {
+      setCurrentOffset(0);
     }
   };
 
@@ -82,7 +84,7 @@ export default function Tops() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 7 12"
-              className="text-gray-400 w-6 h-6"
+              className={`${currentOffset > 0 ? 'text-blue-500' : 'text-gray-300'} w-6 h-6`}
             >
               <path
                 d="M5.962.482L1.218 5.226l-.431.431c-.026.026-.178.127-.178.178-.025.127.38.431.457.507.913.965 1.826 1.929 2.765 2.867.71.761 1.446 1.497 2.156 2.258.254.254-.152.66-.405.406C3.983 10.2 2.385 8.524.762 6.85.583 6.647.38 6.47.202 6.266c-.38-.43-.025-.786.254-1.09L3.222 2.41 5.556.076c.254-.254.66.152.406.406z"

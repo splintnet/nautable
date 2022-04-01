@@ -196,70 +196,23 @@ export default function Questions() {
             <span className="text-sm">Sailing routes. Things to do and see. Recommendations.</span>
           </div>
         </div>
-        <div>
-          <div className="flex items-center justify-center h-0 border-t border-gray-100 my-14">
-            <div className="relative w-14 h-14">
-              <div>
-                <img
-                  alt=""
-                  src="https://cdn.zizoo.com/media/images/agents/agent-1.jpg"
-                  decoding="async"
-                  data-nimg="fill"
-                  className="rounded-full"
-                />
-              </div>
-            </div>
-            <div className="relative w-32 h-32">
-              <div>
-                <img
-                  alt=""
-                  src="https://cdn.zizoo.com/media/images/agents/agent-2.jpg"
-                  decoding="async"
-                  data-nimg="fill"
-                  className="rounded-full"
-                />
-              </div>
-            </div>
-            <div className="relative w-14 h-14">
-              <div>
-                <img
-                  alt=""
-                  src="https://cdn.zizoo.com/media/images/agents/agent-3.jpg"
-                  decoding="async"
-                  data-nimg="fill"
-                  className="rounded-full"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center pt-20">
           <span
             className="text-xl font-semibold md:text-3xl"
           >
             Got a question?
           </span>
           <span className="text-sm md:text-3xl">Our holiday planners are here seven days a week.</span>
-          <dl className="grid grid-flow-row grid-cols-2 gap-4 -ml-12 text-lg">
-            <dt className="text-right">Phone:</dt>
-            <dd className="text-left">
-              <a
-                href="tel:+44 20 3318 3641"
-                className="text-blue-500"
-              >
-                +44 20 3318 3641
-              </a>
-            </dd>
-            <dt className="text-right">WhatsApp:</dt>
-            <dd className="text-left">
-              <a
-                href="tel:+49 15731910983"
-                className="text-blue-500"
-              >
-                +49 15731910983
-              </a>
-            </dd>
-          </dl>
+          <div className="text-center text-lg">
+            Phone:
+            {' '}
+            <a
+              href="tel:+44 20 3318 3641"
+              className="text-blue-500"
+            >
+              +44 20 3318 3641
+            </a>
+          </div>
           <a
             className="border border-transparent rounded text-center appearance-none select-none bg-blue-500 text-white hover:text-white hover:bg-indigo-500 active:bg-indigo-500 text-sm px-4 flex items-center px-10 text-lg font-semibold text-white rounded bg-blue-500 h-11"
             href="mailto:customers@zizooboats.com"

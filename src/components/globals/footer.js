@@ -1,9 +1,12 @@
+import { useRouter } from 'next/router';
 import Newsletter from '../home/newsletter';
 import Guides from '../home/guides';
 import Questions from '../home/questions';
 import Link from '../helper/link';
 
 export default function Footer() {
+  const router = useRouter();
+
   return (
     <>
       <Questions />
@@ -27,35 +30,14 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <a href="/en/">EN</a>
-                  {' '}
-                  |
-                  {' '}
-                  <a href="/en-us/">EN-US</a>
-                  {' '}
-                  |
-                  {' '}
-                  <a href="/de/">DE</a>
-                  {' '}
-                  |
-                  {' '}
-                  <a
-                    href="/nl/"
-                  >
-                    NL
-                  </a>
-                  {' '}
-                  |
-                  {' '}
-                  <a href="/it/">IT</a>
-                  {' '}
-                  |
-                  {' '}
-                  <a href="/es/">ES</a>
-                  {' '}
-                  |
-                  {' '}
-                  <a href="/fr/">FR</a>
+                  {router.locales.map((i, k) => (
+                    <>
+                      <Link href="/" locale={i} activeClassName="text-orange-500">
+                        <a>{i.toUpperCase()}</a>
+                      </Link>
+                      {k < router.locales.length - 1 ? ' | ' : ''}
+                    </>
+                  ))}
                 </li>
               </ul>
             </div>

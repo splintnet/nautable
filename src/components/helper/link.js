@@ -11,7 +11,7 @@ export default withRouter(({
     as={as}
   >
     {React.cloneElement(Children.only(children), {
-      className: (router.asPath === href || router.asPath === as) ? `${children.props.className || ''} ${rest.activeClassName || 'active'}` : (children.props.className || ''),
+      className: ((router.asPath === href && router.locale === rest.locale) || (router.asPath === as && router.locale === rest.locale)) ? `${children.props.className || ''} ${rest.activeClassName || 'active'}` : (children.props.className || ''),
     })}
   </Link>
 ));

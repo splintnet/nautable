@@ -2,7 +2,7 @@ import { DateRangePicker } from 'react-dates';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import SEO from '../components/helper/seo';
-import ShopifyTopUps from '../components/home/top-ups';
+import TopFeatures from '../components/home/top-ups';
 import TopDestinations from '../components/home/destinations';
 import Reviews from '../components/home/reviews';
 import styles from '../styles/index.module.css';
@@ -13,7 +13,7 @@ import Tops from '../components/home/tops';
 import BoatTypes from '../components/home/boat-types';
 import InputWrapper from '../components/globals/input-wrapper';
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const [reviews] = await Promise.all([
     await fetchAPI('/reviews'),
   ]);
@@ -22,11 +22,11 @@ export const getStaticProps = async () => {
     props: {
       reviews,
     },
-    revalidate: 10, // In seconds
+    // revalidate: 10, // In seconds
   };
 };
 
-export default function Zizoo({ reviews }) {
+export default function Home({ reviews }) {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [focusedInput, setFocusedInput] = useState(null);
@@ -186,7 +186,7 @@ export default function Zizoo({ reviews }) {
           </a>
         </div>
       </div>
-      <ShopifyTopUps />
+      <TopFeatures />
       <TopDestinations />
       <Tops />
       <Reviews reviews={reviews} />

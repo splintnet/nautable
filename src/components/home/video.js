@@ -14,8 +14,7 @@ export default function Video() {
             <img
               alt="The Zizoo experience"
               src="https://img.youtube.com/vi/zIV8y6SAbq0/mqdefault.jpg"
-
-              className="aspect-video w-full bg-gray-100"
+              className="aspect-video w-full bg-gray-100 rounded shadow"
             />
           </div>
           <div className="absolute inset-0 flex items-center justify-center">

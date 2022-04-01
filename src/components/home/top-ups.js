@@ -1,6 +1,6 @@
 import NextLink from '../helper/link';
 
-export default function ShopifyTopUps() {
+export default function TopFeatures() {
   return (
     <div className="pt-8 pb-4">
       <div
