@@ -22,7 +22,7 @@ export default function TopDestinations() {
             (
               <li
                 key={k}
-                className={classMap[k] + " w-hp-gallery-item h-hp-gallery-item lg:w-full lg:h-full text-left overflow-hidden rounded-md lg:rounded-none"}>
+                className={classMap[k] + " w-slider-item h-slider-item lg:w-full lg:h-full text-left overflow-hidden rounded-md lg:rounded-none"}>
                 <a style={{backgroundImage: 'url(' + item.image + ')'}}
                    className="relative flex flex-col items-center justify-end h-full duration-500 ease-in-out overlay-2 transition-spacing group hover:text-white"
                    href={item.href}>

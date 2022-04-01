@@ -1,10 +1,35 @@
 import Image from 'next/image'
-import {useEffect} from "react";
+import {useEffect, useRef, useState} from "react";
 
 export default function Tops() {
-  useEffect(() => {
+  const ref = useRef(null);
+  const [siteWidth, setSiteWidth] = useState(480)
+  const [maxWidth, setMaxWidth] = useState(380)
+  const [currentOffset, setCurrentOffset] = useState(0)
+  const [itemWidth, setItemWidth] = useState(150)
 
-  })
+  useEffect(() => {
+    if (ref.current) {
+      let amount = ref.current.children.length
+
+      setSiteWidth(ref.current.clientWidth)
+      setMaxWidth(amount * ref.current.firstChild.clientWidth)
+      setItemWidth(ref.current.firstChild.clientWidth + 10)
+    }
+  }, [ref.current]);
+
+  const next = () => {
+    if (currentOffset < maxWidth - siteWidth) {
+      setCurrentOffset(currentOffset + itemWidth)
+    }
+  }
+
+  const prev = () => {
+    if (currentOffset > 0) {
+      setCurrentOffset(currentOffset - itemWidth)
+    }
+
+  }
 
   return (
     <section className="pt-4 pb-8">
@@ -14,10 +39,13 @@ export default function Tops() {
           <h2 className="text-xl font-semibold text-gray-700 lg:text-3xl">Top Cities and Islands</h2>
         </header>
         <ul
+          ref={ref}
+          style={{transform: 'translateX(' + -currentOffset + 'px)'}}
           className="grid grid-flow-col justify-items-start grid-rows-1 gap-4 overflow-y-hidden overflow-x-auto lg:overflow-visible transition-transform duration-500 ease-in-out">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => (
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
             <li
-              className="overflow-hidden rounded-md lg:h-slider-item-lg lg:w-slider-item-lg">
+              key={i}
+              className="overflow-hidden rounded-md h-slider-item w-slider-item lg:h-slider-item-lg lg:w-slider-item-lg">
               <a className="flex flex-col items-center justify-end text-lg text-center overlay-2 group h-full"
                  href="/en/l/athens/">
                 <div
@@ -37,7 +65,7 @@ export default function Tops() {
           ))}
         </ul>
         <div className="items-center justify-end hidden w-full pt-10 pb-1 space-x-8 lg:flex pr-18 lg:visible">
-          <button className="bg-transparent border-none appearance-none">
+          <button className="bg-transparent border-none appearance-none" onClick={prev}>
             <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 12"
                  className="text-gray-400 w-6 h-6">
               <path
@@ -45,7 +73,7 @@ export default function Tops() {
                 fill="currentColor"></path>
             </svg>
           </button>
-          <button className="bg-transparent border-none appearance-none">
+          <button className="bg-transparent border-none appearance-none" onClick={next}>
             <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 12"
                  className="text-blue-500 w-6 h-6">
               <path

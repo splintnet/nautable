@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import "../styles/nprogress.css"
 import "../styles/calendar.css"
-//import 'react-dates/lib/css/_datepicker.css';
 import 'react-dates/initialize';
 
 import Router from "next/router";

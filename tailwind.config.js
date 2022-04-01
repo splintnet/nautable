@@ -33,15 +33,22 @@ module.exports = {
         },
       },
       width: {
+        'slider-item': '220px',
         'slider-item-lg': '270px',
       },
       height: {
+        'slider-item': '300px',
         'slider-item-lg': '340px',
       }
     },
   },
+  corePlugins: {
+    aspectRatio: false,
+  },
   plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/forms')
+    require('@tailwindcss/typography'),
+    //require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp'),
   ],
 }

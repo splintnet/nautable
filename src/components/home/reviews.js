@@ -11,7 +11,7 @@ export default function Reviews({reviews}) {
           {reviews.map((item, k) => (
             <div
               key={k}
-              className="hidden mx-auto bg-gray-100 flex lg:flex flex-col items-center text-center px-8 pb-8 rounded-md space-y-4 max-w-md">
+              className={(k > 0 ? 'hidden' : '') + " mx-auto bg-gray-100 flex lg:flex flex-col items-center text-center px-8 pb-8 rounded-md space-y-4 max-w-md"}>
               <div className="-mt-12">
                 <Image alt={item.name}
                        height={150}
