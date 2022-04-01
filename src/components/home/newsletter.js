@@ -7,11 +7,13 @@ export default function Newsletter() {
           className="text-2xl font-semibold">
         Subscribe to our newsletter to get a £50 voucher and all our best offers.
         </span>
-        <form noValidate="" method="post"
+        <form noValidate=""
+method="post"
               className="flex flex-col w-full mx-auto space-y-4 md:w-auto md:flex-row md:space-y-0 md:space-x-4">
           <div className="flex flex-col space-y-1 text-left">
             <div className="flex flex-col items-start w-full space-y-2">
-              <input id="field-email" name="email"
+              <input id="field-email"
+name="email"
                      type="email"
                      className="w-full h-11 px-4 border border-transparent rounded bg-white text-base text-gray-700 lg:w-300"
                      placeholder="Your e-mail address"

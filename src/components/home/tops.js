@@ -52,7 +52,8 @@ export default function Tops() {
                   className="h-full w-full relative overflow-hidden"
                 >
 
-                  <Image alt="Yacht Charter Athens" src="https://cdn.zizoo.com/media/images/top-cities/en/athens.jpg"
+                  <Image alt="Yacht Charter Athens"
+src="https://cdn.zizoo.com/media/images/top-cities/en/athens.jpg"
                          layout="fill"/>
 
                 </div>
@@ -65,20 +66,26 @@ export default function Tops() {
           ))}
         </ul>
         <div className="items-center justify-end hidden w-full pt-10 pb-1 space-x-8 lg:flex pr-18 lg:visible">
-          <button className="bg-transparent border-none appearance-none" onClick={prev}>
-            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 12"
+          <button className="bg-transparent border-none appearance-none"
+onClick={prev}>
+            <svg fill="none"
+xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 7 12"
                  className="text-gray-400 w-6 h-6">
               <path
                 d="M5.962.482L1.218 5.226l-.431.431c-.026.026-.178.127-.178.178-.025.127.38.431.457.507.913.965 1.826 1.929 2.765 2.867.71.761 1.446 1.497 2.156 2.258.254.254-.152.66-.405.406C3.983 10.2 2.385 8.524.762 6.85.583 6.647.38 6.47.202 6.266c-.38-.43-.025-.786.254-1.09L3.222 2.41 5.556.076c.254-.254.66.152.406.406z"
-                fill="currentColor"></path>
+                fill="currentColor" />
             </svg>
           </button>
-          <button className="bg-transparent border-none appearance-none" onClick={next}>
-            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 12"
+          <button className="bg-transparent border-none appearance-none"
+onClick={next}>
+            <svg fill="none"
+xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 6 12"
                  className="text-blue-500 w-6 h-6">
               <path
                 d="M.076.482L4.82 5.226l.431.431c.026.026.178.127.178.178.025.127-.38.431-.457.507-.913.965-1.826 1.929-2.765 2.867-.71.761-1.446 1.497-2.156 2.258-.254.254.152.66.406.406C2.055 10.2 3.653 8.524 5.277 6.85c.177-.203.38-.38.558-.584.38-.43.025-.786-.254-1.09L2.816 2.41.482.076C.228-.178-.178.228.076.482z"
-                fill="currentColor"></path>
+                fill="currentColor" />
             </svg>
           </button>
         </div>

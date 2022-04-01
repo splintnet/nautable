@@ -75,8 +75,11 @@ export default function ContactModal(props) {
 
   return (<>
       {success && (<ContactFireworks/>)}
-      <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={setOpen}>
+      <Transition.Root show={open}
+as={Fragment}>
+        <Dialog as="div"
+className="fixed z-10 inset-0 overflow-y-auto"
+onClose={setOpen}>
           <div className="flex items-end justify-center min-h-screen text-center sm:block sm:p-0">
             <Transition.Child
               as={Fragment}
@@ -90,7 +93,8 @@ export default function ContactModal(props) {
               <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-75 transition-opacity"/>
             </Transition.Child>
 
-            <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
+            <span className="hidden sm:inline-block sm:align-middle sm:h-screen"
+aria-hidden="true">
               &#8203;
             </span>
             <Transition.Child
@@ -111,14 +115,16 @@ export default function ContactModal(props) {
                     onClick={() => setOpen(false)}
                   >
                     <span className="sr-only">Schließen</span>
-                    <XIcon className="h-6 w-6" aria-hidden="true"/>
+                    <XIcon className="h-6 w-6"
+aria-hidden="true"/>
                   </button>
                 </div>
                 <div>
                   <h2 className="sr-only">Kontaktiere uns</h2>
                   <div className="grid grid-cols-1 lg:grid-cols-3">
                     <div className="relative overflow-hidden py-10 px-6 bg-primary-800 sm:px-10 xl:p-12">
-                      <div className="absolute inset-0 pointer-events-none sm:hidden" aria-hidden="true">
+                      <div className="absolute inset-0 pointer-events-none sm:hidden"
+aria-hidden="true">
                         <svg
                           className="absolute inset-0 w-full h-full"
                           width={343}
@@ -143,7 +149,9 @@ export default function ContactModal(props) {
                               gradientUnits="userSpaceOnUse"
                             >
                               <stop stopColor="#fff"/>
-                              <stop offset={1} stopColor="#fff" stopOpacity={0}/>
+                              <stop offset={1}
+stopColor="#fff"
+stopOpacity={0}/>
                             </linearGradient>
                           </defs>
                         </svg>
@@ -176,7 +184,9 @@ export default function ContactModal(props) {
                               gradientUnits="userSpaceOnUse"
                             >
                               <stop stopColor="#fff"/>
-                              <stop offset={1} stopColor="#fff" stopOpacity={0}/>
+                              <stop offset={1}
+stopColor="#fff"
+stopOpacity={0}/>
                             </linearGradient>
                           </defs>
                         </svg>
@@ -209,7 +219,9 @@ export default function ContactModal(props) {
                               gradientUnits="userSpaceOnUse"
                             >
                               <stop stopColor="#fff"/>
-                              <stop offset={1} stopColor="#fff" stopOpacity={0}/>
+                              <stop offset={1}
+stopColor="#fff"
+stopOpacity={0}/>
                             </linearGradient>
                           </defs>
                         </svg>
@@ -224,21 +236,26 @@ export default function ContactModal(props) {
                           <span className="sr-only">Phone number</span>
                         </dt>
                         <dd className="flex text-base text-indigo-50">
-                          <PhoneIcon className="flex-shrink-0 w-6 h-6 text-indigo-200" aria-hidden="true"/>
+                          <PhoneIcon className="flex-shrink-0 w-6 h-6 text-indigo-200"
+aria-hidden="true"/>
                           <span className="ml-3">040 210 919 45-0</span>
                         </dd>
                         <dt>
                           <span className="sr-only">Email</span>
                         </dt>
                         <dd className="flex text-base text-indigo-50">
-                          <MailIcon className="flex-shrink-0 w-6 h-6 text-indigo-200" aria-hidden="true"/>
+                          <MailIcon className="flex-shrink-0 w-6 h-6 text-indigo-200"
+aria-hidden="true"/>
                           <span className="ml-3">info@splintnet.de</span>
                         </dd>
                       </dl>
-                      <ul role="list" className="mt-8 flex space-x-12">
+                      <ul role="list"
+className="mt-8 flex space-x-12">
                         <li>
-                          <a className="text-indigo-200 hover:text-indigo-100" target="_blank"
-                             href="https://www.facebook.com/splintnet" rel="noreferrer">
+                          <a className="text-indigo-200 hover:text-indigo-100"
+target="_blank"
+                             href="https://www.facebook.com/splintnet"
+rel="noreferrer">
                             <span className="sr-only">Facebook</span>
                             <svg
                               width={24}
@@ -257,7 +274,8 @@ export default function ContactModal(props) {
                           </a>
                         </li>
                         <li>
-                          <a className="text-indigo-200 hover:text-indigo-100" target="blank"
+                          <a className="text-indigo-200 hover:text-indigo-100"
+target="blank"
                              href="https://github.com/splintnet">
                             <span className="sr-only">GitHub</span>
                             <svg
@@ -277,8 +295,10 @@ export default function ContactModal(props) {
                           </a>
                         </li>
                         <li>
-                          <a className="text-indigo-200 hover:text-indigo-100" target="_blank"
-                             href="https://twitter.com/splintnet" rel="noreferrer">
+                          <a className="text-indigo-200 hover:text-indigo-100"
+target="_blank"
+                             href="https://twitter.com/splintnet"
+rel="noreferrer">
                             <span className="sr-only">Twitter</span>
                             <svg
                               width={24}
@@ -309,7 +329,8 @@ export default function ContactModal(props) {
                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                             onChange={onReCAPTCHAChange}
                           />
-                          <label htmlFor="firstname" className="block text-sm font-medium text-gray-900">
+                          <label htmlFor="firstname"
+className="block text-sm font-medium text-gray-900">
                             Vorname
                           </label>
                           <div className="mt-1">
@@ -326,7 +347,8 @@ export default function ContactModal(props) {
                             <span className="text-xs text-red-600">Bitte geben Sie Ihren Vornamen an</span>)}
                         </div>
                         <div>
-                          <label htmlFor="lastname" className="block text-sm font-medium text-gray-900">
+                          <label htmlFor="lastname"
+className="block text-sm font-medium text-gray-900">
                             Nachname
                           </label>
                           <div className="mt-1">
@@ -343,7 +365,8 @@ export default function ContactModal(props) {
                             <span className="text-xs text-red-600">Bitte geben Sie Ihren Nachnamen an</span>)}
                         </div>
                         <div>
-                          <label htmlFor="email" className="block text-sm font-medium text-gray-900">
+                          <label htmlFor="email"
+className="block text-sm font-medium text-gray-900">
                             E-Mail
                           </label>
                           <div className="mt-1">
@@ -361,7 +384,8 @@ export default function ContactModal(props) {
                         </div>
                         <div>
                           <div className="flex justify-between">
-                            <label htmlFor="phone" className="block text-sm font-medium text-gray-900">
+                            <label htmlFor="phone"
+className="block text-sm font-medium text-gray-900">
                               Mobil
                             </label>
                           </div>
@@ -380,7 +404,8 @@ export default function ContactModal(props) {
                             <span className="text-xs text-red-600">Bitte geben Sie Ihre Telefonnummer an</span>)}
                         </div>
                         <div className="sm:col-span-2">
-                          <label htmlFor="subject" className="block text-sm font-medium text-gray-900">
+                          <label htmlFor="subject"
+className="block text-sm font-medium text-gray-900">
                             Betreff
                           </label>
                           <div className="mt-1">
@@ -398,10 +423,12 @@ export default function ContactModal(props) {
                         </div>
                         <div className="sm:col-span-2">
                           <div className="flex justify-between">
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-900">
+                            <label htmlFor="message"
+className="block text-sm font-medium text-gray-900">
                               Nachricht
                             </label>
-                            <span id="message-max" className="text-xs text-gray-500">
+                            <span id="message-max"
+className="text-xs text-gray-500">
                               Max. 500 Zeichen
                             </span>
                           </div>
@@ -422,7 +449,8 @@ export default function ContactModal(props) {
                         <div className="sm:col-span-2 sm:flex sm:justify-end">
 
                           <button
-                            type="button" onClick={() => setOpen(false)}
+                            type="button"
+onClick={() => setOpen(false)}
 
                             className="mt-2 w-full inline-flex items-center justify-center border border-gray-300 px-6 py-3 rounded-md shadow text-base font-medium mr-2 bg-white shadow hover:bg-gray-100 sm:w-auto"
                           >

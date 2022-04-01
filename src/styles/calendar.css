@@ -15,21 +15,18 @@
 }
 
 .CalendarDay__default {
-  border: 1px solid #e4e7e7;
-  color: #484848;
+  @apply relative text-black;
   background: #fff
 }
 
 .CalendarDay__default:hover {
   background: #e4e7e7;
   border: 1px solid #e4e7e7;
-  color: inherit
 }
 
 .CalendarDay__hovered_offset {
   background: #f4f5f5;
   border: 1px double #e4e7e7;
-  color: inherit
 }
 
 .CalendarDay__outside {
@@ -66,30 +63,25 @@
 }
 
 .CalendarDay__selected_span {
-  background: #66e2da;
-  border: 1px double #33dacd;
-  color: #fff
+  @apply bg-gray-200;
 }
 
 .CalendarDay__selected_span:active,
 .CalendarDay__selected_span:hover {
-  background: #33dacd;
-  border: 1px double #33dacd;
+  @apply bg-primary-600;
   color: #fff
 }
 
 .CalendarDay__selected,
 .CalendarDay__selected:active,
 .CalendarDay__selected:hover {
-  background: #00a699;
-  border: 1px double #00a699;
+  @apply bg-primary-600;
   color: #fff
 }
 
 .CalendarDay__hovered_span,
 .CalendarDay__hovered_span:hover {
   background: #b2f1ec;
-  border: 1px double #80e8e0;
   color: #007a87
 }
 
@@ -378,7 +370,7 @@
 }
 
 .DayPicker_weekHeaders {
-  position: relative
+  position: relative;
 }
 
 .DayPicker_weekHeaders__horizontal {
@@ -388,9 +380,10 @@
 .DayPicker_weekHeader {
   color: #757575;
   position: absolute;
-  top: 62px;
+  top: 55px;
   z-index: 2;
-  text-align: left
+  text-align: left;
+  border-bottom: 2px solid theme('colors.primary.400');
 }
 
 .DayPicker_weekHeader__vertical {
@@ -447,10 +440,6 @@
   overflow-y: scroll
 }
 
-.DateInput__small {
-  width: 97px
-}
-
 .DateInput__block {
   width: 100%
 }
@@ -504,20 +493,7 @@
 }
 
 .DateInput_fang {
-  position: absolute;
-  width: 20px;
-  height: 10px;
-  left: 22px;
-  z-index: 2
-}
-
-.DateInput_fangShape {
-  fill: #fff
-}
-
-.DateInput_fangStroke {
-  stroke: #dbdbdb;
-  fill: transparent
+  display: none;
 }
 
 .DateRangePickerInput {
@@ -540,9 +516,7 @@
 .DateRangePickerInput_clearDates {
   background: 0 0;
   border: 0;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
+
   overflow: visible;
   cursor: pointer;
   padding: 10px;
@@ -581,10 +555,6 @@
 }
 
 .DateRangePickerInput_calendarIcon {
-  background: 0 0;
-  border: 0;
-  color: inherit;
-  font: inherit;
   line-height: normal;
   overflow: visible;
   cursor: pointer;
@@ -642,10 +612,6 @@
 }
 
 .DateRangePicker_closeButton {
-  background: 0 0;
-  border: 0;
-  color: inherit;
-  font: inherit;
   line-height: normal;
   overflow: visible;
   cursor: pointer;

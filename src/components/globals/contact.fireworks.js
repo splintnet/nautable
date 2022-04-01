@@ -154,6 +154,8 @@ export default function ContactFireworks() {
   }
 
   return (
-    <Particles id="fireworks" className="special-firework" options={settings}/>
+    <Particles id="fireworks"
+className="special-firework"
+options={settings}/>
   )
 }

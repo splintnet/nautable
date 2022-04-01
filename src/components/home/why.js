@@ -37,7 +37,8 @@ export default function WhyShopify() {
               {faqs.map((faq) => (
                 <div key={faq.question}>
                   <dt className="text-lg leading-6 font-medium text-gray-300">{faq.question}</dt>
-                  <dd className="mt-2 text-base text-gray-400" dangerouslySetInnerHTML={{__html: faq.answer}}></dd>
+                  <dd className="mt-2 text-base text-gray-400"
+dangerouslySetInnerHTML={{__html: faq.answer}} />
                 </div>
               ))}
             </dl>

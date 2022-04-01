@@ -45,7 +45,9 @@ export default function SEO({
     <Head>
       <title>{title}</title>
       {metaData.map(({name, content}, i) => (
-        <meta key={i} name={name} content={content}/>
+        <meta key={i}
+name={name}
+content={content}/>
       ))}
     </Head>
   );

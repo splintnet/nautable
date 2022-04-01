@@ -29,7 +29,8 @@ export default function TopDestinations() {
                   <div
                     className={style.imageWrapper}>
                     <img alt="Yacht Charter Bahamas"
-                         src="https://cdn.zizoo.com/media/images/top-destinations/bahamas-lg.jpg" decoding="async"
+                         src="https://cdn.zizoo.com/media/images/top-destinations/bahamas-lg.jpg"
+decoding="async"
                          data-nimg="fill"
                          className="object-cover w-full h-full"/></div>
                   <div

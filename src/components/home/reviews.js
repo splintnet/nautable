@@ -28,7 +28,8 @@ export default function Reviews({reviews}) {
                 <Image
                   width={30}
                   height={20}
-                  src="https://cdn.zizoo.com/media/images/flags/square/au.svg" className="w-full h-auto"
+                  src="https://cdn.zizoo.com/media/images/flags/square/au.svg"
+className="w-full h-auto"
                 />
               </div>
             </div>
